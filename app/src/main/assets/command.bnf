@@ -1,0 +1,32 @@
+#BNF+IAT 1.0 UTF-8;
+!grammar command;
+!slot <who>;
+!slot <something>;
+!slot <somewhere>;
+!start <Start>;
+
+<Start>:<start1> | <start2> | <start3> | <start4> | <start5> | <start6>;
+
+<start1>:[<robot>][<Iwant>]<playmusic>[<tome>];
+<Iwant>:给我;
+<playmusic>:放首歌!id(2);
+<tome>:给我听|听一下;
+
+<start2>:[<robot>][<take>]<something><to><who>;
+<take>:把;
+<who>:我!id(40);
+<to>:给!id(20)|递给!id(20)|拿给!id(20);
+<something>:杯子!id(30)|水杯!id(30)|瓶子!id(31)|手机!id(32);
+<robot>:公子小哥;
+
+<start3>:[<robot>]<move><somewhere>;
+<move>:去!id(10)|来!id(10);
+<somewhere>:厨房!id(11)|卧室!id(12)|客厅!id(13);
+
+<start4>:[<robot>]你休息吧!id(1)|[<robot>]你可以休息了!id(1);
+
+<start5>:[<robot>]你有哪些功能!id(3)|[<robot>]你能做些什么!id(3);
+
+<start6>:[<robot>]去找李文星!id(65534)|[<robot>]去找丁鹏!id(65535);
+
+
